@@ -14,7 +14,6 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/darthfabar/DistributedCachePollyDecorator</PackageProjectUrl>
-    <PackageIcon>Icon.png</PackageIcon>
     <RepositoryUrl>https://github.com/darthfabar/DistributedCachePollyDecorator.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>https://github.com/darthfabar/DistributedCachePollyDecorator/releases</PackageReleaseNotes>
