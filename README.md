@@ -1,5 +1,3 @@
-![Banner](Images/Banner.png)
-
 # DistributedCachePollyDecorator
 
 [![GitHub Actions Status](https://github.com/darthfabar/DistributedCachePollyDecorator/workflows/Build/badge.svg?branch=main)](https://github.com/darthfabar/DistributedCachePollyDecorator/actions)
