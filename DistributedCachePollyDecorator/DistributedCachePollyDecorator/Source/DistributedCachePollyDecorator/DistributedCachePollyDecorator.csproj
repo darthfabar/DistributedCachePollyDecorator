@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Build">
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Package">
+    <Product>DistributedCachePollyDecorator</Product>
+    <Description>Provides a Decorator for IDistributedCache to inject Polly-policies</Description>
+    <PackageTags>IDistributedCache;Polly;CircuitBreaker;Redis</PackageTags>
+  </PropertyGroup>
+
+</Project>

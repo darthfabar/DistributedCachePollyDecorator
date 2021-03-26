@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.218
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributedCachePollyDecorator", "DistributedCachePollyDecorator\Source\DistributedCachePollyDecorator\DistributedCachePollyDecorator.csproj", "{FE10C623-CEBA-41AD-946D-D90BB4771DCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributedCachePollyDecorator.Test", "DistributedCachePollyDecorator\Tests\DistributedCachePollyDecorator.Test\DistributedCachePollyDecorator.Test.csproj", "{596B6D2E-F05A-4290-BA0C-3E189A7A16C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE10C623-CEBA-41AD-946D-D90BB4771DCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE10C623-CEBA-41AD-946D-D90BB4771DCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE10C623-CEBA-41AD-946D-D90BB4771DCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE10C623-CEBA-41AD-946D-D90BB4771DCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{596B6D2E-F05A-4290-BA0C-3E189A7A16C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{596B6D2E-F05A-4290-BA0C-3E189A7A16C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{596B6D2E-F05A-4290-BA0C-3E189A7A16C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{596B6D2E-F05A-4290-BA0C-3E189A7A16C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B1A19D9B-E050-497C-8997-F599CC4900D8}
+	EndGlobalSection
+EndGlobal
