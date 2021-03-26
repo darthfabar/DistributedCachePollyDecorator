@@ -26,7 +26,7 @@ namespace DistributedCachePollyDecorator.Tests
         }
 
         [Fact]
-        public async Task Circuit_Should_Open_After_GetAync_3_Tries_Async()
+        public async Task Circuit_Should_Open_After_3_GetAync_Tries_Async()
         {
             var sb = GetServiceProvider();
             var cacheMock = sb.GetRequiredService<Mock<IDistributedCache>>();
@@ -39,6 +39,22 @@ namespace DistributedCachePollyDecorator.Tests
                 _ = await callGetAsync.Should().ThrowAsync<SocketException>().ConfigureAwait(false);
             }
             await callGetAsync.Should().ThrowAsync<BrokenCircuitException>().ConfigureAwait(false);
+        }
+
+        [Fact]
+        public void Circuit_Should_Open_After_3_Get_Tries()
+        {
+            var sb = GetServiceProvider();
+            var cacheMock = sb.GetRequiredService<Mock<IDistributedCache>>();
+            cacheMock.SetupGetWithException(new SocketException());
+            var distributedCache = sb.GetRequiredService<IDistributedCache>();
+
+            Func<byte[]> callGetAsync = () => distributedCache.Get("cachekey");
+            for (var i = 0; i < 2; i++)
+            {
+                _ =  callGetAsync.Should().Throw<SocketException>();
+            }
+             callGetAsync.Should().Throw<BrokenCircuitException>();
         }
     }
 }

@@ -20,6 +20,13 @@ namespace DistributedCachePollyDecorator.Tests
             return mock;
         }
 
+        public static Mock<IDistributedCache> SetupGetWithException(this Mock<IDistributedCache> mock, Exception exception)
+        {
+            mock.Setup(s => s.Get(It.IsAny<string>())).Throws(exception);
+
+            return mock;
+        }
+
         public static IServiceCollection AddDistributedCacheMock(this IServiceCollection services)
         {
             var mock = GetMock();
