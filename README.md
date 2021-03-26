@@ -9,7 +9,7 @@ With this package you can inject Polly policy behaviours to the IDistributedCach
 Right now it enables you to have a circuitbreaker policy that enables you to fail fast in case you Redis is down or your app runs into connection errors.
 
 
-#How to use the package:
+# How to use the package:
 
 Just add a 'AddDistributedCacheDecorator' call in your Startup.cs / any other place where you do your registrations
 ```cs
