@@ -66,9 +66,7 @@ namespace DistributedCachePollyDecorator.Policies
         /// <returns>Policy.</returns>
         public static AsyncCircuitBreakerPolicy GetAsyncCircuitBreaker(CircuitBreakerSettings circuitBreakerSettings)
         {
-            var breaker = Policy
-                .Handle<IOException>()
-                .Or<SocketException>()
+            var breaker = BasePolicyBuilder()
                 .CircuitBreakerAsync(circuitBreakerSettings.ExceptionsAllowedBeforeBreaking, circuitBreakerSettings.DurationOfBreak);
 
             return breaker;
@@ -81,9 +79,7 @@ namespace DistributedCachePollyDecorator.Policies
         /// <returns>Policy.</returns>
         public static AsyncCircuitBreakerPolicy GetAsyncCircuitBreaker(CircuitBreakerAdvancedSettings circuitBreakerSettings)
         {
-            var breaker = Policy
-                .Handle<IOException>()
-                .Or<SocketException>()
+            var breaker = BasePolicyBuilder()
                 .AdvancedCircuitBreakerAsync(
                     circuitBreakerSettings.FailureThreshold,
                     circuitBreakerSettings.SamplingDuration,
@@ -100,9 +96,7 @@ namespace DistributedCachePollyDecorator.Policies
         /// <returns>Policy.</returns>
         public static CircuitBreakerPolicy GetSyncCircuitBreaker(CircuitBreakerAdvancedSettings circuitBreakerSettings)
         {
-            var breaker = Policy
-                .Handle<IOException>()
-                .Or<SocketException>()
+            var breaker = BasePolicyBuilder()
                 .AdvancedCircuitBreaker(
                     circuitBreakerSettings.FailureThreshold,
                     circuitBreakerSettings.SamplingDuration,
@@ -119,14 +113,16 @@ namespace DistributedCachePollyDecorator.Policies
         /// <returns>Policy.</returns>
         public static CircuitBreakerPolicy GetSyncCircuitBreaker(CircuitBreakerSettings circuitBreakerSettings)
         {
-            var breaker = Policy
-                .Handle<IOException>()
-                .Or<SocketException>()
+            var breaker = BasePolicyBuilder()
                 .CircuitBreaker(circuitBreakerSettings.ExceptionsAllowedBeforeBreaking, circuitBreakerSettings.DurationOfBreak);
 
             return breaker;
         }
 
+        private static PolicyBuilder BasePolicyBuilder()
+        {
+            return Policy.Handle<SocketException>();
+        }
     }
 
 }
