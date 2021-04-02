@@ -41,3 +41,9 @@ Just add a 'AddDistributedCacheDecorator' call in your Startup.cs / any other pl
 		});
 	}
 ```
+
+# Install Package
+
+> dotnet add package DistributedCachePollyDecorator --version 1.0.0
+
+Or go to https://www.nuget.org/packages/DistributedCachePollyDecorator/ 
