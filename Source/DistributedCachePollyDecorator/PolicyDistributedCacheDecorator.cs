@@ -97,7 +97,7 @@ namespace DistributedCachePollyDecorator
         /// <param name="options"></param>
         public void Set(string key, byte[] value, DistributedCacheEntryOptions options)
         {
-            _syncPolicy.Execute(() => _distributedCache.Remove(key));
+            _syncPolicy.Execute(() => _distributedCache.Set(key, value));
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace DistributedCachePollyDecorator
         /// <returns></returns>
         public async Task SetAsync(string key, byte[] value, DistributedCacheEntryOptions options, CancellationToken token = default)
         {
-            await _asyncPolicy.ExecuteAsync(() => _distributedCache.RemoveAsync(key, token)).ConfigureAwait(false);
+            await _asyncPolicy.ExecuteAsync(() => _distributedCache.SetAsync(key, value, options, token)).ConfigureAwait(false);
         }
     }
 }
